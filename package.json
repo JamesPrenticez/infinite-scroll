@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "infinite-scroll",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
+    "@tanstack/react-query": "^4.29.19",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",

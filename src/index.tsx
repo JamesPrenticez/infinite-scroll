@@ -5,10 +5,33 @@ import App from "./App";
 import "./styles/globals.css";
 import { BrowserRouter } from "react-router-dom";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 300000, // 5mins
+      cacheTime: 300000,
+      refetchOnWindowFocus: false,
+      retry: (failureCount = 3, error) => {
+        if (error instanceof Error && error.message.includes("(retry = false)")) {
+          console.log("No retry:", error);
+          return false;
+        } else {
+          return true;
+        }
+      },
+    },
+  },
+});
+
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </QueryClientProvider>
 );
