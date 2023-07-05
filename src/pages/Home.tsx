@@ -2,6 +2,7 @@ import React, { type ReactElement } from "react";
 import Body from "../components/layout/Body";
 import Pagination from "../components/Pagination";
 import Continuous from "../components/Continuous";
+import InfiniteScroll from "../components/InfiniteScroll";
 
 const Home = (): ReactElement => {
   return (
@@ -13,6 +14,7 @@ const Home = (): ReactElement => {
       <hr />
       <Continuous />
       <hr />
+      <InfiniteScroll />
     </Body>
   );
 };

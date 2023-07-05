@@ -23,9 +23,9 @@ const fetchPosts = async (page: number): Promise<IPosts[]>  => {
 }
 
 // hook
-const useGetPostsInfiniteQuery = (pageParam: number): UseInfiniteQueryResult<IPosts[], Error> => {
+const useGetPostsInfiniteQuery1 = (pageParam: number): UseInfiniteQueryResult<IPosts[], Error> => {
   const result = useInfiniteQuery<IPosts[], Error>({
-    queryKey: ["useGetPostsInfiniteQuery", pageParam],
+    queryKey: ["useGetPostsInfiniteQuery1", pageParam],
     queryFn: async ({pageParam = 1}) => {
       const response = await fetchPosts(pageParam)
       return response
@@ -43,7 +43,7 @@ const useGetPostsInfiniteQuery = (pageParam: number): UseInfiniteQueryResult<IPo
 }
 
 const Continuous = (): ReactElement => {
-  const { data, isSuccess, fetchNextPage, isFetchingNextPage } = useGetPostsInfiniteQuery(1)
+  const { data, isSuccess, fetchNextPage, isFetchingNextPage } = useGetPostsInfiniteQuery1(1)
 
   return (
     <div>
