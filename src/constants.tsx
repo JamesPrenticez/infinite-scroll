@@ -4,5 +4,6 @@ export const project = {
 
 export const pages = [
   { name: "HOME", url: "/", requiresAuth: false },
+  { name: "REDUX", url: "/redux", requiresAuth: false },
   { name: "ABOUT", url: "/about", requiresAuth: false },
 ];

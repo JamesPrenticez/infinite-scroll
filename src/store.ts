@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import thunk from 'redux-thunk';
-import taskReducer from './redux/slices/taskSlice';
+import todoReducer from './redux/slices/todoSlice';
 
 export const store = configureStore({
   reducer: {
-    tasks: taskReducer,
+    todoStore: todoReducer,
   },
-  // middleware: [thunk],
   devTools: process.env.NODE_ENV !== 'production',
 });
 

@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Loading from "./components/common/Loading";
 import About from "./pages/About";
+import Redux from "./pages/Redux";
 
 const Home = lazy(async () => {
   const [moduleExports] = await Promise.all([
@@ -26,6 +27,7 @@ const App = (): React.ReactElement => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/redux" element={<Redux />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
