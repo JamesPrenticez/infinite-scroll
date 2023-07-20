@@ -5,8 +5,7 @@ import React, {
   // cloneElement,
   type ReactElement
 } from 'react';
-import { useIntersection } from '@mantine/hooks'
-// import { useIntersection } from './useIntersection';
+import { useIntersection } from './useIntersection';
 
 interface Props {
   data: any[];
@@ -19,32 +18,9 @@ interface Props {
 
 const InfiniteScroll = ({ maxResults, data, isLoading, renderComponent, additionalProps, fetchNextPage }: Props): React.ReactElement => {
 
-  const lastPostRef = useRef<HTMLDivElement>(null);
+  // ===============================================
+  const lastPostRef = useRef<HTMLElement>(null)
 
-  // Try implement my own observer
-  // interface IntersectionOptions {
-  //   root: HTMLDivElement | null,
-  //   rootMargin: string;
-  //   threshold: number;
-  // }
-
-  // const intersectionOptions: IntersectionOptions = {
-  //   root: lastPostRef.current, // Set the root element if needed
-  //   rootMargin: '0px', // Set the root margin if needed
-  //   threshold: 0.5, // Set the intersection threshold if needed
-  // };
-
-  // const { ref, intersecting } = useIntersection(intersectionOptions);
-
-  // useEffect(() => {
-  //   if (intersecting !== null) {
-  //     if (intersecting) {
-  //       fetchNextPage()
-  //     }
-  //   }
-  // }, [intersecting])
-
-  // Use library for intersection
   const {ref, entry} = useIntersection({
     root: lastPostRef.current,
     threshold: 1
@@ -58,9 +34,7 @@ const InfiniteScroll = ({ maxResults, data, isLoading, renderComponent, addition
       }
     }
   }, [entry])
-
-  console.log(maxResults)
-  console.log(data.length)
+  // ===============================================
 
   // RenderComponent as a Function
   if (typeof renderComponent === 'function') {

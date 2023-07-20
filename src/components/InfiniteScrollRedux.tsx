@@ -23,7 +23,6 @@ const InfiniteScroll1 = (): ReactElement => {
   }, [currentPage, dispatch])
 
   const { maxResults, isLoading } = useAppSelector((state) => state.todoStore)
-  console.log(maxResults)
 
   const handleNextPage = (): void => {
     console.log("here")
