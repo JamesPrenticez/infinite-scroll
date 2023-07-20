@@ -13,6 +13,20 @@ const mockData: IMockData[] = [
   {id: 4, title: "post 4"},
   {id: 5, title: "post 5"},
   {id: 6, title: "post 6"},
+  {id: 7, title: "post 6"},
+  {id: 8, title: "post 6"},
+  {id: 9, title: "post 6"},
+  {id: 10, title: "post 6"},
+  {id: 11, title: "post 6"},
+  {id: 12, title: "post 6"},
+  {id: 13, title: "post 6"},
+  {id: 14, title: "post 6"},
+  {id: 15, title: "post 6"},
+  {id: 16, title: "post 6"},
+  {id: 17, title: "post 6"},
+  {id: 18, title: "post 6"},
+  {id: 19, title: "post 6"},
+  {id: 20, title: "post 6"},
 ]
 
 export const fetchMyTodos = createAsyncThunk("todos/fetchTodos", async ({currentPage, resultsPerPage}: {currentPage: number, resultsPerPage: number}, { dispatch }) => {

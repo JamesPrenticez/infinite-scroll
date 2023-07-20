@@ -7,13 +7,22 @@ const todoSlice = createSlice({
     todos: [] as any[],
     status: "",
     isLoading: false,
-    resultsPerPage: 2,
+    resultsPerPage: 5,
     currentPage: 1,
     maxResults: 10
   },
   reducers: {
     fetchTodos: (state, action) => {
-      state.todos = action.payload;
+      // state.todos = action.payload;
+      // Instead of replacing todos, append new todos to the existing state
+      state.todos = [...state.todos, ...action.payload];
+      // console.log(state)
+      // console.log(action.payload)
+      // const test = state.todos.concat(action.payload);
+      // console.log(test)
+      // console.log(state.todos)
+      // // state.todos = [...state.todos, ...action.payload];
+      // state.todos = state.todos.concat(action.payload);
     },
     fetchMaxResults: (state, action) => {
       state.maxResults = action.payload;
@@ -24,12 +33,12 @@ const todoSlice = createSlice({
     onNavigationPrev: (state) => {
       state.currentPage --;
     },
-    onChangeResultsPerPage: (state, action) => {
-      state.resultsPerPage = action.payload
-    },
-    onClickCurrentPage: (state, action) => {
-      state.currentPage = action.payload
-    },
+    // onChangeResultsPerPage: (state, action) => {
+    //   state.resultsPerPage = action.payload
+    // },
+    // onClickCurrentPage: (state, action) => {
+    //   state.currentPage = action.payload
+    // },
   }, 
   extraReducers: {
     [fetchMyTodos.pending.type]: (state, action) => {
@@ -38,7 +47,7 @@ const todoSlice = createSlice({
     },
     [fetchMyTodos.fulfilled.type]: (state, { payload }) => {
       state.status = "success"
-      state.todos = payload
+      // state.todos = payload //  dont do this or you replace your data ='(
       state.isLoading = false
     },
     [fetchMyTodos.rejected.type]: (state, action) => {
@@ -53,8 +62,8 @@ export const {
   fetchMaxResults,
   onNavigationNext,
   onNavigationPrev,
-  onChangeResultsPerPage,
-  onClickCurrentPage,
+  // onChangeResultsPerPage,
+  // onClickCurrentPage,
 } = todoSlice.actions;
 
 export default todoSlice.reducer;

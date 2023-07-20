@@ -1,0 +1,55 @@
+<!-- https://codepen.io/evth/pen/zBNqrL -->
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="50px"
+  height="50px"
+  viewBox="0 0 100 100"
+>
+
+  <!-- <linearGradient
+    id="linear_gradient_spinner"
+    x1="0%"
+    y1="0%"
+    x2="100%"
+    y2="0%"
+  >
+    <stop offset="0%" stop-color="#002470" />
+    <stop offset="100%" stop-color="#002470"/>
+  </linearGradient>
+  stroke="url(#linear_gradient_spinner)" -->
+        
+
+  <!-- This is the actual asset but its not an acurate circle -->
+  <!-- <path 
+    d="M288.929,67.281l-3.359-1.939a1.941,1.941,0,0,1-.752-2.561,32.259,32.259,0,0,0-26.976-46.723A1.941,1.941,0,0,1,256,14.125V10.246a1.941,1.941,0,0,1,2.049-1.933,40,40,0,0,1,33.578,58.159A1.941,1.941,0,0,1,288.929,67.281Z"
+    transform="rotate(180) translate(-300 -100.311)"
+    fill="#002470"
+  /> -->
+
+
+  <circle
+    cx="50"
+    cy="50"
+    r="35"
+    fill="none"
+    
+    stroke="#002470"
+    stroke-width="7"
+    stroke-dasharray="200"
+    stroke-dashoffset="120"
+    transform="rotate(-90 ) translate(-100 0)"
+    stroke-linecap="round"
+  >
+  
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      repeatCount="indefinite"
+      dur="1s"
+      values="0 50 50;360 50 50"
+      keyTimes="0;1"
+    ></animateTransform> 
+    
+    </circle>
+  </svg>

@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface IntersectionOptions {
-  root?: Element | null;
+  root?: HTMLDivElement | null;
   rootMargin?: string;
   threshold?: number | number[];
 };
 
 interface IntersectionResult {
-  ref: React.RefObject<Element>;
+  ref: React.RefObject<HTMLDivElement>;
   intersecting: boolean;
 };
 
 export const useIntersection = (options: IntersectionOptions): IntersectionResult => {
   const [intersecting, setIntersecting] = useState(false);
-  const ref = useRef<Element | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

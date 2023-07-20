@@ -2,7 +2,6 @@ import React, {
   type ReactElement,
   useEffect,
 } from 'react'
-import Body from './layout/Body'
 import { useAppDispatch, useAppSelector } from '../redux/hooks/hooks';
 import { onNavigationNext, onNavigationPrev } from '../redux/slices/todoSlice'
 import { fetchMyTodos } from '../redux/api/todoAPI';
@@ -38,8 +37,7 @@ const PaginationRedux = (): ReactElement => {
   }
 
   return (
-    <Body>
-      <div className='bg-green-200 h-screen w-full'>
+      <div>
         <h1>Todos</h1>
 
         <div className='border border-red-500 bg-green-100 p-4'>
@@ -96,22 +94,11 @@ const PaginationRedux = (): ReactElement => {
           </button>
         </div>
 
-        <hr />
-
         <footer>Page: {currentPage} of {totalPages}</footer>
 
 
       </div>
-    </Body>
   )
 }
-
-// const PaginationRedux = (): ReactElement => {
-
-//   return (
-// <h1>hi</h1>
-//   )
-// }
-
 
 export default PaginationRedux
